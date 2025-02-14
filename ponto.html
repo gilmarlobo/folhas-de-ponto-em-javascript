@@ -6,90 +6,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de Folha de Ponto</title>
-    <script>
-        const funcionarios = {
-            "Escolha o Servidor": "Escolha",
-            "Denilson Asena da Silva": "Gestor",
-            "Gilson da Silva Duarte": "Coordenador",
-            "Cícero Cardoso Nunes": "Vigia",
-            "Bruno Rodrigues de Oliveira": "Coordenador de prédio",
-            "Carlos de Freias": "Professor",
-            "Deuzenilde Nunes Cardoso": "Professora",
-            "Gilmar Pereira da Conceição": "Professor",
-            "Ivone de Sousa Brandão": "Professora",
-            "Isalete de Brito Lopes": "Professora",
-            "Jõao Evangelista Santos Pereira": "Professor",
-            "Kátia de Sousa Batista Nunes": "Profesora",
-            "Lázaro Neres da Silva": "Professor",
-            "Maria Avelina Gomes da Silva": "Professora",
-            "Marinalva Feitosa Santos": "Professora",
-            "Osmar Evangelista da Silva Cardoso": "A.S.G",
-            "Rosenilde Costa Marinho": "professora",
-
-        };
-
-        function carregarFuncionarios() {
-            const select = document.getElementById("nome");
-            for (const nome in funcionarios) {
-                const option = document.createElement("option");
-                option.value = nome;
-                option.textContent = nome;
-                select.appendChild(option);
-            }
-        }
-
-        function atualizarFuncao() {
-            const nome = document.getElementById("nome").value;
-            document.getElementById("funcao").value = funcionarios[nome] || "";
-        }
-
-        function gerarFolha() {
-            const nome = document.getElementById("nome").value;
-            const funcao = document.getElementById("funcao").value;
-            const data = document.getElementById("mesAno").value;
-
-            if (!nome || !funcao || !data) {
-                alert("Preencha todos os campos!");
-                return;
-            }
-
-            localStorage.setItem("nome", nome);
-            localStorage.setItem("funcao", funcao);
-            localStorage.setItem("mesAno", data);
-
-            window.location.href = "folha.html";
-        }
-
-        function gerarFolhasAutomaticamente() {
-    const mesAno = document.getElementById("mesAnoAutomatico").value;
-    if (!mesAno) {
-        alert("Selecione o mês e ano para gerar as folhas!");
-        return;
-    }
-
-    // Itera sobre os funcionários e gera a folha de cada um
-    for (const nome in funcionarios) {
-        if (nome !== "Escolha o Servidor") { // Ignora a opção "Escolha o Servidor"
-            const funcao = funcionarios[nome];
-            const url = `folha.html?nome=${encodeURIComponent(nome)}&funcao=${encodeURIComponent(funcao)}&mesAno=${mesAno}`;
-            window.open(url, "_blank"); // Abre a folha em uma nova aba
-        }
-    }
-}
-    </script>
-</head>
+   <link rel="stylesheet" href="style.css">
+    </head>
 
 <body onload="carregarFuncionarios()">
+    <img src="logo.jpg" alt="logo da prefeitura">
     <h2>Gerador de Folha de Ponto</h2>
     <label>Nome: <select id="nome" onchange="atualizarFuncao()"></select></label><br>
     <label>Função: <input type="text" id="funcao" readonly></label><br>
     <label>Mês/Ano: <input type="month" id="mesAno"></label><br>
     <button onclick="gerarFolha()">Gerar Folha</button>
     <br><br>
-    <h2>Geração Automática de Folhas</h2>
-    <label for="mesAnoAutomatico">Mês/Ano:</label>
-    <input type="month" id="mesAnoAutomatico"><br>
-    <button onclick="gerarFolhasAutomaticamente()">Gerar e Imprimir Todas as Folhas</button>
+   <footer>
+    <p><i>By Gilmar Developer - 2025</i></p>
+   </footer>
+   <script src="java.js"></script>
 </body>
 
 </html>

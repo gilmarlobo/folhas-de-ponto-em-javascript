@@ -25,17 +25,38 @@
 
         h3 {
             text-align: center;
+
+        }
+
+        .assinatura {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #161515;
+            /* Linhas finas e discretas */
+            text-align: center;
+            padding:2px;
+        }
+
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
         }
     </style>
     <script>
-        function carregarFolha() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const nome = urlParams.get('nome');
-            const funcao = urlParams.get('funcao');
-            const mesAno = urlParams.get('mesAno');
-
+        function carregarFolha() { // aqui é o ponto
+            const nome = localStorage.getItem("nome");
+            const funcao = localStorage.getItem("funcao");
+            const mesAno = localStorage.getItem("mesAno");
             if (!nome || !funcao || !mesAno) {
                 alert("Nenhuma folha de ponto foi gerada!");
+
                 window.location.href = "ponto.html";
                 return;
             }
@@ -44,13 +65,13 @@
             const nomeMeses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
                 "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
             ];
-            const nomeMes = nomeMeses[parseInt(mes) - 1]; // Obtém o nome do mês
 
-            document.getElementById("mesAno").innerText = `${nomeMes} de ${ano}`; // Formato atualizado
+            const nomeMes = nomeMeses[parseInt(mes) - 1]; // Obtém o nome do mês
+            const proxMes = nomeMeses[parseInt(mes)];
+
+            document.getElementById("mesAno").innerText = `16 de ${nomeMes} a  15 de ${proxMes} de ${ano}`; // Formato atualizado
             document.getElementById("nome").innerText = nome;
             document.getElementById("funcao").innerText = funcao;
-
-
 
             const dataInicio = new Date(ano, mes - 1, 16);
             const dataFim = new Date(ano, mes, 15);
@@ -60,9 +81,7 @@
                 const row = tabela.insertRow();
                 const diaFormatado = `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`;
                 const diaSemana = d.getDay();
-
                 row.insertCell(0).innerText = diaFormatado;
-
                 if (diaSemana === 0) {
                     row.insertCell(1).innerText = "DOMINGO";
                     row.insertCell(2).innerText = "DOMINGO";
@@ -75,18 +94,20 @@
                     row.insertCell(2).innerText = ""; // Saída
                 }
             }
+
             if (localStorage.getItem("imprimirAutomaticamente") === "true") {
                 window.print();
                 localStorage.removeItem("imprimirAutomaticamente"); // Limpa a flag
             }
         }
+
     </script>
 </head>
 
 <body onload="carregarFolha()">
     <img src="logo.jpg" alt="logo da prefeitura">
     <h3>SECRETARIA MUNICIPAL DE EDUCAÇÃO - SEMED</h3>
-    <h3>Escola Municipal José Arcanjo de Deus e Silva</h3><br>
+    <h3>Escola Municipal José Arcanjo de Deus e Silva</h3>
 
     <h3>Folha de Ponto</h2><br>
         <p><strong>Nome:</strong> <span id="nome"></span></p>
@@ -101,7 +122,12 @@
                 </tr>
             </thead>
             <tbody id="tabela"></tbody>
-        </table>
+        </table><br><br><br>
+        <div class="assinatura">
+            <p>___________________________________</p>
+            <p>Assinatura do Gestor</p>
+
+        </div>
         <!--<button onclick="window.print()">Imprimir</button>
 
         <button onclick="window.location.href='ponto.html'">Voltar</button>-->
