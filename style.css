@@ -61,3 +61,25 @@ footer {
     border-radius: 10px 10px 0 0;
    
 }
+@media(max-width:500px){
+   body{
+    margin:30px;
+   }
+    h1{
+        font-size: 28px;
+        margin: 0;
+    }
+    h2{
+        font-size: 24px;
+        margin: 0;
+    }
+    img {
+        width: 200px;
+        height: 80px;
+        margin-left: 1%;
+    }
+    select, input, button{
+        margin: 0;
+        padding: 10px;
+    }
+}
