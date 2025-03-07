@@ -1,10 +1,13 @@
 const funcionarios = {
     "Escolha o Servidor": "Escolha",
+    "Adice da Silva Coelho Moraes": "Agente Administrativo",
+    "Antonia Laura de Lima Sousa": "Professora",
     "Bruno Rodrigues de Oliveira": "Coordenador de prédio",
     "Carlos de Freitas": "Professor",
     "Cícero Cardoso Nunes": "Vigia",
     "Denilson Asena da Silva": "Gestor",
     "Deuzenilde Nunes Cardoso": "Professora",
+    "Edna Cardoso Coqueiro": "A.S.G",
     "Gilmar Pereira da Conceição": "Professor",
     "Gilson da Silva Duarte": "Coordenador",
     "Isalete de Brito Lopes": "Professora",
@@ -26,6 +29,7 @@ const funcionarios = {
     "Maria Sônia de Jesus Silva":"Professora",
     "Orlany Rodrigues Furtunato da Silva":"Professora",
     "Raimundo Nonato Cavalcante Araujo":"Professor ",
+    "Rosimeire Oliveira Lima": "A.S.G",
     "Vanda Araujo Neres":"Professora",
     "Vania Idelmar de Andrade Castelo":"Professora"
     };
