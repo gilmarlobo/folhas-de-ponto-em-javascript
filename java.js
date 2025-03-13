@@ -14,6 +14,7 @@ const funcionarios = {
     "Isalete de Brito Lopes": "Professora",
     "Ivone de Sousa Brandão": "Professora",
     "João Evangelista Santos Pereira": "Professor",
+    "Jocilene Moreira Freitas": "Assistente de aluno",
     "Kátia de Sousa Batista Nunes": "Profesora",
     "Lázaro Neres da Silva": "Professor",
     "Maria Avelina Gomes da Silva": "Professora",
