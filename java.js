@@ -17,7 +17,9 @@ const funcionarios = {
     "Jocilene Moreira Freitas": "Assistente de alunoluno",
     "Kátia de Sousa Batista Nunes": "Profesora",
     "Lázaro Neres da Silva": "Professor",
+    "Leonilda Barbos da Silva": "Assistente de Aluno Especial",
     "Maria Avelina Gomes da Silva": "Professora",
+    "Maria Clara de Sousa Rocha": "Assistente de Aluno Especial",
     "Maria do Socorro Mendes Pereira": "A.S.G",
     "Marinalva Feitosa Santos": "Professora",
     "Osmar Evangelista da Silva Cardoso": "A.S.G",
@@ -38,7 +40,8 @@ const funcionarios = {
     "Solange Alves Monteiro":"Professora",
     "Rosimeire Oliveira Lima": "A.S.G",
     "Vanda Araujo Neres":"Professora",
-    "Vania Idelmar de Andrade Castelo":"Professora"
+    "Vania Idelmar de Andrade Castelo":"Professora",
+    "Verônica Pereira Viana": "Assistente de Aluno Especial",
     };
 
 
