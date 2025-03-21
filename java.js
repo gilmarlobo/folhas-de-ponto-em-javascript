@@ -18,6 +18,7 @@ const funcionarios = {
     "Kátia de Sousa Batista Nunes": "Profesora",
     "Lázaro Neres da Silva": "Professor",
     "Leonilda Barbosa da Silva": "Assistente de Aluno Especial",
+    "Lilian dos Santos Meneses": "A.S.G",
     "Maria Avelina Gomes da Silva": "Professora",
     "Maria Clara de Sousa Rocha": "Assistente de Aluno Especial",
     "Maria do Socorro Mendes Pereira": "A.S.G",
