@@ -9,6 +9,7 @@ const funcionarios = {
     "Denilson Asena da Silva": "Gestor",
     "Deuzenilde Nunes Cardoso": "Professora",
     "Edna Cardoso Coqueiro": "A.S.G",
+    "Eslim Ribeiro Silva": "Professor",
     "Gilmar Pereira da Conceição": "Professor de Robótica",
     "Gilson da Silva Duarte": "Coordenador",
     "Isalete de Brito Lopes": "Professora",
