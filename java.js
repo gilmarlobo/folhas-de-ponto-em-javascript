@@ -52,7 +52,8 @@ const funcionarios = {
     "Vanda Araujo Neres":"Professora",
     "Vania Idelmar de Andrade Castelo":"Professora",
     "Verônica Pereira Viana": "Assistente de Aluno Especial",
-    };
+    "Walmira Sousa da Silva": "Professora",    
+};
 
 
 
