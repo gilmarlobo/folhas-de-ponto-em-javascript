@@ -73,8 +73,8 @@
             document.getElementById("nome").innerText = nome;
             document.getElementById("funcao").innerText = funcao;
 
-            const dataInicio = new Date(ano, mes - 1, 16);
-            const dataFim = new Date(ano, mes, 15);
+            const dataInicio = new Date(ano, mes - 1, 5); // Início do período (16 do mês selecionado)
+            const dataFim = new Date(ano, mes, 4);
             const tabela = document.getElementById("tabela");
 
             for (let d = new Date(dataInicio); d <= dataFim; d.setDate(d.getDate() + 1)) {
