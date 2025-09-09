@@ -11,6 +11,7 @@ const funcionarios = {
     "Deuzenilde Nunes Cardoso": "Professora",
     "Doriane de Jesus Costa Leal de Azevedo": "Professora",
     "Edna Cardoso Coqueiro": "A.S.G",
+    "Edivaldo Cunha da Costa": "Vigia",
     "Elisvania de Sousa Cardoso": "Monitora de Matemática",
     "Eslim Ribeiro Silva": "Professor",
     "Francilene Lopes Pinheiro": "Monitora de Língua Portuguesa",
