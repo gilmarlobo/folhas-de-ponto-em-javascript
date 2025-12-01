@@ -14,6 +14,7 @@ const funcionarios = {
     "Edivaldo Cunha da Costa": "Vigia",
     "Elisvania de Sousa Cardoso": "Monitora de Matemática",
     "Eslim Ribeiro Silva": "Professor",
+    "Francigleymisson dos Santos Lima": "Agente Administrativo",
     "Francilene Lopes Pinheiro": "Monitora de Língua Portuguesa",
     "Gilmar Pereira da Conceição": "Professor de Robótica",
     "Gilson da Silva Duarte": "Coordenador",
