@@ -66,14 +66,24 @@
                 "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
             ];
 
-            const nomeMes = nomeMeses[parseInt(mes) - 1]; // Obtém o nome do mês
-            const proxMes = nomeMeses[parseInt(mes)];
+            const nomeMes = nomeMeses[parseInt(mes) - 1]; // Obtém o nome do mês atual
 
-            document.getElementById("mesAno").innerText = `05 de ${nomeMes} a  04 de ${proxMes} de ${ano}`; // Formato atualizado
+            // Correção para próximo mês e ano
+            let mesProx = parseInt(mes);
+            let anoProx = parseInt(ano);
+            if (mesProx === 12) {
+                mesProx = 1;
+                anoProx += 1;
+            } else {
+                mesProx += 1;
+            }
+            const proxMes = nomeMeses[mesProx - 1]; // Obtém o nome do próximo mês
+
+            document.getElementById("mesAno").innerText = `05 de ${nomeMes} a 04 de ${proxMes} de ${anoProx}`; // Formato atualizado com ano corrigido
             document.getElementById("nome").innerText = nome;
             document.getElementById("funcao").innerText = funcao;
 
-            const dataInicio = new Date(ano, mes - 1, 5); // Início do período (16 do mês selecionado)
+            const dataInicio = new Date(ano, mes - 1, 5); // Início do período (dia 5 do mês selecionado)
             const dataFim = new Date(ano, mes, 4);
             const tabela = document.getElementById("tabela");
 
@@ -88,7 +98,6 @@
                 } else if (diaSemana === 6) {
                     row.insertCell(1).innerText = "SÁBADO";
                     row.insertCell(2).innerText = "SÁBADO";
-
                 } else {
                     row.insertCell(1).innerText = ""; // Entrada
                     row.insertCell(2).innerText = ""; // Saída
@@ -100,7 +109,6 @@
                 localStorage.removeItem("imprimirAutomaticamente"); // Limpa a flag
             }
         }
-
     </script>
 </head>
 
