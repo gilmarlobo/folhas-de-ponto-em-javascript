@@ -1,20 +1,10 @@
-// ===============================
-// SUPABASE CONFIG
-// ===============================
-const { createClient } = supabase;
-
-const SUPABASE_URL = "https://xgixtmjvsmragjkrmvqe.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhnaXh0bWp2c21yYWdqa3JtdnFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxMDI1MzEsImV4cCI6MjA4NDY3ODUzMX0.wUCedYSrfFEzkkhPFXvV0PxaItDjLJveI6N0vn3i0dQ";
-
-const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
-
-// ===============================
-// VARIÁVEIS GLOBAIS
+﻿// ===============================\r\n// SUPABASE CLIENT (from supabase.js)\r\n// ===============================\r\nconst supabaseClient = window.supabaseClient;\r\n\r\n// ===============================
+// VARIÃVEIS GLOBAIS
 // ===============================
 let funcionariosCache = [];
 
 // ===============================
-// CARREGAR FUNCIONÁRIOS
+// CARREGAR FUNCIONÃRIOS
 // ===============================
 async function carregarFuncionarios() {
     const select = document.getElementById("nome");
@@ -26,7 +16,7 @@ async function carregarFuncionarios() {
         .order("nome", { ascending: true });
 
     if (error) {
-        alert("Erro ao carregar funcionários");
+        alert("Erro ao carregar funcionÃ¡rios");
         console.error(error);
         return;
     }
@@ -42,11 +32,11 @@ async function carregarFuncionarios() {
 }
 
 // ===============================
-// ATUALIZAR FUNÇÃO
+// ATUALIZAR FUNÃ‡ÃƒO
 // ===============================
 function atualizarFuncao() {
     const id = document.getElementById("nome").value;
-    // Forçamos ambos a virarem String para não ter erro de tipo
+    // ForÃ§amos ambos a virarem String para nÃ£o ter erro de tipo
     const funcionario = funcionariosCache.find(f => String(f.id) === String(id));
 
     if (funcionario) {
@@ -68,7 +58,7 @@ function gerarFolha() {
     const funcionario = funcionariosCache.find(f => String(f.id) === String(id));
 
     if (!funcionario || !data) {
-        alert("Preencha todos os campos! Selecione um servidor e o mês/ano.");
+        alert("Preencha todos os campos! Selecione um servidor e o mÃªs/ano.");
         return;
     }
 
@@ -86,7 +76,7 @@ function gerarFolhasAutomaticamente() {
     const mesAno = document.getElementById("mesAnoAutomatico")?.value;
 
     if (!mesAno) {
-        alert("Selecione o mês e ano");
+        alert("Selecione o mÃªs e ano");
         return;
     }
 
@@ -100,7 +90,7 @@ function gerarFolhasAutomaticamente() {
 }
 
 // ===============================
-// CRUD – SALVAR (CRIAR / EDITAR)
+// CRUD â€“ SALVAR (CRIAR / EDITAR)
 // ===============================
 async function salvarFuncionario() {
     const id = document.getElementById("funcionarioId").value;
@@ -108,7 +98,7 @@ async function salvarFuncionario() {
     const funcao = document.getElementById("novaFuncao").value.trim();
 
     if (!nome || !funcao) {
-        alert("Informe nome e função");
+        alert("Informe nome e funÃ§Ã£o");
         return;
     }
 
@@ -126,7 +116,7 @@ async function salvarFuncionario() {
     }
 
     if (response.error) {
-        alert("Erro ao salvar funcionário");
+        alert("Erro ao salvar funcionÃ¡rio");
         console.error(response.error);
         return;
     }
@@ -136,17 +126,17 @@ async function salvarFuncionario() {
 }
 
 // ===============================
-// CRUD – EXCLUIR
+// CRUD â€“ EXCLUIR
 // ===============================
 async function excluirFuncionario() {
     const id = document.getElementById("funcionarioId").value;
 
     if (!id) {
-        alert("Selecione um funcionário");
+        alert("Selecione um funcionÃ¡rio");
         return;
     }
 
-    if (!confirm("Deseja realmente excluir este funcionário?")) return;
+    if (!confirm("Deseja realmente excluir este funcionÃ¡rio?")) return;
 
     const { error } = await supabaseClient
         .from("professores_arcanjo")
@@ -164,17 +154,17 @@ async function excluirFuncionario() {
 }
 
 // ===============================
-// PREENCHER FORMULÁRIO AO SELECIONAR
+// PREENCHER FORMULÃRIO AO SELECIONAR
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
     carregarFuncionarios();
 
-    // --- Lógica para Data Atual Padrão ---
+    // --- LÃ³gica para Data Atual PadrÃ£o ---
     const campoData = document.getElementById("mesAno");
     const agora = new Date();
     const ano = agora.getFullYear();
     // getMonth() retorna 0 para Janeiro, por isso somamos +1
-    // padStart garante que meses com 1 dígito fiquem como "01", "02", etc.
+    // padStart garante que meses com 1 dÃ­gito fiquem como "01", "02", etc.
     const mes = String(agora.getMonth() + 1).padStart(2, '0'); 
     
     campoData.value = `${ano}-${mes}`;
@@ -197,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ===============================
-// LIMPAR FORMULÁRIO
+// LIMPAR FORMULÃRIO
 // ===============================
 function limparFormulario() {
     document.getElementById("funcionarioId").value = "";
@@ -215,3 +205,4 @@ window.gerarFolha = gerarFolha;
 window.gerarFolhasAutomaticamente = gerarFolhasAutomaticamente;
 window.salvarFuncionario = salvarFuncionario;
 window.excluirFuncionario = excluirFuncionario;
+
